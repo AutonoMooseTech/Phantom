@@ -11,10 +11,10 @@ namespace Phantom {
 		uint8_t echoPin;
 		uint16_t trigPulseDelta = 10; // In Milliseconds
 
-		uint16_t distance;
+		//uint16_t distance;
 
 		// Timing
-		uint16_t lastTrig;
+		//uint16_t lastTrig;
 
 	public:
 		Ultrasonic(uint8_t trigPin, uint8_t echoPin);
