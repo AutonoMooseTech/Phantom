@@ -8,6 +8,10 @@ namespace Phantom {
 			delay(delta);
 			digitalWrite(pin, !state);
 		}
+
+		 void fmap(float input, float inMin, float inMax, float outMin, float outMax) {
+		 	return (input - inMin) * (outMax - outMin) / (in_max - in_min) + outMin;
+		 }
 	}
 }
 
