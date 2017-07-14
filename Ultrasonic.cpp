@@ -12,6 +12,7 @@ uint16_t Ultrasonic::get(void) {
 }
 
 void Ultrasonic::update(void) {
+	// Check for minimum delay since last trigger event
 	if (millis() - lastTrig >= trigMinDelta) {
 		// Pulse trigger pin
 		Utils::pulse(this->trigPin, this->trigPulseDelta, HIGH);
