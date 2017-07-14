@@ -11,7 +11,7 @@ uint16_t Ultrasonic::get(void) {
 	return distance;
 }
 
-void Ultrasonic::refresh(void) {
+void Ultrasonic::update(void) {
 	if (millis() - lastTrig >= trigMinDelta) {
 		// Pulse trigger pin
 		Utils::pulse(this->trigPin, this->trigPulseDelta, HIGH);

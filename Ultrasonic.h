@@ -22,7 +22,7 @@ namespace Phantom {
 
 		uint16_t get(void); // returns last value aquired in mm
 
-		void refresh(void); // Needed when making non blocking
+		void update(void); // Needed when making non blocking
 	};
 }
 
