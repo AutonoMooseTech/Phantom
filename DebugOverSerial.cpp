@@ -1,5 +1,7 @@
 #include "DebugOverSerial.h"
 
+using namespace Phantom;
+
 DebugOverSerial::DebugOverSerial(uint16_t baud) {
 	this->baud = baud;
 	Serial.begin(this->baud);
