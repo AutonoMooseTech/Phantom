@@ -15,14 +15,14 @@ void Ultrasonic::update(void) {
 	// Check for minimum delay since last trigger event
 	if (millis() - lastTrig >= trigMinDelta) {
 		// Pulse trigger pin
-		Utils::pulse(this->trigPin, this->trigPulseDelta, HIGH);
+		Utils::pulseHi(this->trigPin, this->trigPulseDelta);
 		// Wait unil signal goes high
-		while(!digitalRead(this->echoPin));
+		while(!digitalRead(this->echoPin)); // Todo: add timeouts
 		// Remember start time
 		uint32_t startTime = micros();
 		// Wait while signal is high
-		while(digitalRead(this->echoPin));
+		while(digitalRead(this->echoPin)); // Todo: add imeouts
 		// Return calculated value in mm
-		this->distance = (micros() - startTime) / 5.8f;
+		this->distance = Utils::delta(micros(), startTime) / 5.8f;
 	}
 }
