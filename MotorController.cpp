@@ -6,11 +6,11 @@ MotorController::MotorController(uint8_t pinPWM, uint8_t pinDirA, uint8_t pinDir
 	pinMode(this->pinDirB, OUTPUT);
 }
 
-void MotorController::set(float value) {
+void MotorController::setValue(float value) {
 	this->value = value;
 }
 
-float MotorController::get() {
+float MotorController::getValue() {
 	return this->value;
 }
 
@@ -19,4 +19,3 @@ void MotorController::update() {
 	digitalWrite(this->pinDirA, this->value < 0.0f);
 	analogWrite(this->pinPWM, Utils::mapVal(this->value, -1.0f, 1.0f, 0, 255)); // Write PWM Value
 }
-
