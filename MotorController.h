@@ -1,6 +1,7 @@
 #ifndef MOTORCONTROLLER_H
 #define MOTORCONTROLLER_H
 
+#include <Arduino.h>
 #include "Utils.h"
 
 class MotorController {
