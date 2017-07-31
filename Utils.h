@@ -127,37 +127,6 @@ inline T delta(T a, T b) {
 
 
 /*===============================================================================
-  class TimerBase (pure virtual)
---------------------------------------------------------------------------------*/
-class TimerBase
-{
-private:
-  uint32_t currTime;
-  uint32_t prevTime;
-  uint32_t updateTime;
-
-public:
-  TimerBase(uint32_t interval = 100)
-    : prevTime(0), updateTime(interval)
-    {
-    }
-
-  void update(void)
-    {
-    // sentinel
-    currTime = millis();
-    if(currTime - prevTime < updateTime) return;
-    prevTime = currTime;
-
-    doWork();
-    }
-
-  virtual void doWork(void) = 0;
-
-};// end class TimerBase
-
-
-/*===============================================================================
   class HeartBeat
 --------------------------------------------------------------------------------*/
 
