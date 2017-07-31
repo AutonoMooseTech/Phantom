@@ -1,5 +1,7 @@
 #include "MotorController.h"
 
+using namespace Phantom;
+
 MotorController::MotorController(uint8_t pinPWM, uint8_t pinDirA, uint8_t pinDirB): pinPWM(pinPWM), pinDirA(pinDirA), pinDirB(pinDirB) {
 	pinMode(this->pinPWM, OUTPUT);
 	pinMode(this->pinDirA, OUTPUT);
