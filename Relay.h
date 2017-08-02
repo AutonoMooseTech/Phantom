@@ -19,6 +19,8 @@ namespace Phantom {
 		void on();
 		void off();
 
+		void setState(bool state);
+
 		void update();
 	private:
 		uint8_t pin;

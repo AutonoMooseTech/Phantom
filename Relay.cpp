@@ -14,6 +14,10 @@ void Relay::off() {
 	state = bool(type);
 }
 
+void Relay::setState(bool state) {
+	this->state = state;
+}
+
 void Relay::update() {
 	digitalWrite(pin, state);
 }
