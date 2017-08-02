@@ -14,6 +14,7 @@ namespace Utils
 {
 
 #include <Arduino.h>
+#include "TimerBase.h"
 
 /*===============================================================================
   type defs
@@ -130,7 +131,7 @@ inline T delta(T a, T b) {
   class HeartBeat
 --------------------------------------------------------------------------------*/
 
-class HeartBeat: public TimerBase
+class HeartBeat: public Phantom::TimerBase
 {
 private:
   uint8_t ledPin;
