@@ -2,6 +2,10 @@
 
 using namespace Phantom;
 
+SolenoidController::SolenoidController(uint8_t pinTrigger): pinTrigger(pinTrigger) {
+	pinMode(pinTrigger, OUTPUT);
+}
+
 SolenoidController::SolenoidController(uint8_t pinTrigger, uint8_t pinVoltSense): pinTrigger(pinTrigger), pinVoltSense(pinVoltSense) {
 	pinMode(pinTrigger, OUTPUT);
 	pinMode(pinVoltSense, INPUT);
