@@ -99,7 +99,6 @@ namespace Phantom {
 			return (val - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 		}
 
-
 		inline void pulseHi(byte pin, uint32_t deltaUs = 0) {
 			digitalWrite(pin, HI);
 			if(deltaUs) delayMicroseconds(deltaUs);
@@ -116,7 +115,6 @@ namespace Phantom {
 		inline T delta(T a, T b) {
 			return T(fabs(a - b));
 		}
-
 	}
 }
 
