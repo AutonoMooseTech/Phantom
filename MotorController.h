@@ -12,7 +12,7 @@ namespace Phantom {
 		void setValue(float value);
 		float getValue();
 
-		void enable();
+		void disable();
 
 		void update();
 	private:
