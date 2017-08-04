@@ -94,9 +94,9 @@ namespace Phantom {
 		template<typename T> inline void togMask(T &data, T m)   { data ^= m; }          // toggle many bits
 
 
-		template<typename T>
-		inline T mapVal(T val, T in_min, T in_max, T out_min, T out_max) {
-			return (val - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+		template<typename T, typename T2>
+		inline T mapVal(T2 val, T2 in_min, T2 in_max, T out_min, T out_max) {
+			return T(val - in_min) * (out_max - out_min) / T(in_max - in_min) + out_min;
 		}
 
 		inline void pulseHi(byte pin, uint32_t deltaUs = 0) {
