@@ -3,22 +3,10 @@
 
 #include <Arduino.h>
 
-// Classes
-#include "DebugOverSerial.h"
-#include "I2CSlavePortControl.h"
-//#include "MotorController.h"
-#include "Relay.h"
-#include "SenseLight.h"
-#include "SolenoidController.h"
-#include "SpeedController.h"
-#include "TimerBase.h"
-#include "Ultrasonic.h"
-//#include "VNH2SP30.h"
-
 namespace Phantom {
 	// Type Definitions
 
-	#ifndef int8_t
+	/*#ifndef int8_t
 	typedef char                 int8_t;
 	typedef short                int16_t;
 	typedef long                 int32_t;
@@ -34,7 +22,7 @@ namespace Phantom {
 
 	#ifndef byte
 	typedef unsigned char        byte;
-	#endif
+	#endif */
 
 	// Constants and Defines
 
