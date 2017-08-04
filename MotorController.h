@@ -11,6 +11,9 @@ namespace Phantom {
 
 		void set(float value);
 
+		void setMin(uint8_t min);
+		void setMax(uint8_t max);
+
 		void disable();
 
 		void update();
@@ -18,6 +21,10 @@ namespace Phantom {
 		uint8_t pinPWM, pinDirA, pinDirB, pinEnable; // Pinout
 		float value = 0.0f;
 		bool enabled = true;
+
+		// Bounds
+		uint8_t min = 0;
+		uint8_t max = 255;
 	};
 }
 

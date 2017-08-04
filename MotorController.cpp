@@ -22,6 +22,11 @@ void MotorController::update() {
 	if (enabled) {
 		digitalWrite(pinDirA, value > 0.0f); // Use sign to set direction pins 
 		digitalWrite(pinDirA, value < 0.0f);
-		analogWrite(pinPWM, map(value, -1.0f, 1.0f, 0, 255)); // Write PWM Value
+		analogWrite(pinPWM, map(fabs(value), 0.0f, 1.0f, min, max)); // Write PWM Value
+	}
+	else {
+		digitalWrite(pinDirA, LOW); // Use sign to set direction pins 
+		digitalWrite(pinDirA, LOW);
+		digitalWrite(pinPWM, LOW);
 	}
 }
