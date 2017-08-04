@@ -115,6 +115,18 @@ namespace Phantom {
 		inline T delta(T a, T b) {
 			return T(fabs(a - b));
 		}
+
+		template<typename T>
+		inline T constrain(const T x, const T a, const T b) {
+			if(x < a) {
+				return a;
+			}
+			else if(b < x) {
+				return b;
+			}
+			else
+				return x;
+		}
 	}
 }
 
