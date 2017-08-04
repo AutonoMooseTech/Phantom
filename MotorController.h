@@ -9,7 +9,7 @@ namespace Phantom {
 	public:
 		MotorController(uint8_t pinPWM, uint8_t pinDirA, uint8_t pinDirB);
 
-		void setValue(float value);
+		void set(float value);
 		float getValue();
 
 		void disable();

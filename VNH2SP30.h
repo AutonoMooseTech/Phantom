@@ -11,7 +11,6 @@ namespace Phantom {
 		VNH2SP30(uint8_t pinPWM, uint8_t pinDirA, uint8_t pinDirB);
 		VNH2SP30(uint8_t pinPWM, uint8_t pinDirA, uint8_t pinDirB, uint8_t pinEnable);
 
-		void set(float value);
 		float get();
 	private:
 		uint8_t pinEnable;

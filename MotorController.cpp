@@ -8,7 +8,7 @@ MotorController::MotorController(uint8_t pinPWM, uint8_t pinDirA, uint8_t pinDir
 	pinMode(this->pinDirB, OUTPUT);
 }
 
-void MotorController::setValue(float value) {
+void MotorController::set(float value) {
 	this->value = value;
 	enabled = true;
 }
