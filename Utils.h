@@ -95,7 +95,7 @@ namespace Phantom {
 
 
 		template<typename T, typename T2>
-		inline T mapVal(T2 val, T2 in_min, T2 in_max, T out_min, T out_max) {
+		inline T map(T2 val, T2 in_min, T2 in_max, T out_min, T out_max) {
 			return T(val - in_min) * (out_max - out_min) / T(in_max - in_min) + out_min;
 		}
 
@@ -115,9 +115,11 @@ namespace Phantom {
 		inline T delta(T a, T b) {
 			return T(fabs(a - b));
 		}
-
+		
+		#ifndef constrain
+		#define constrain
 		template<typename T>
-		inline T constrain(const T x, const T a, const T b) {
+		inline T constrain(T x, T a, T b) {
 			if(x < a) {
 				return a;
 			}
@@ -127,6 +129,7 @@ namespace Phantom {
 			else
 				return x;
 		}
+		#endif
 	}
 }
 
