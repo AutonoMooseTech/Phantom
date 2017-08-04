@@ -6,14 +6,14 @@
 // Classes
 #include "DebugOverSerial.h"
 #include "I2CSlavePortControl.h"
-#include "MotorControler.h"
+//#include "MotorController.h"
 #include "Relay.h"
 #include "SenseLight.h"
 #include "SolenoidController.h"
 #include "SpeedController.h"
 #include "TimerBase.h"
 #include "Ultrasonic.h"
-#include "VNH2SP30.h"
+//#include "VNH2SP30.h"
 
 namespace Phantom {
 	// Type Definitions

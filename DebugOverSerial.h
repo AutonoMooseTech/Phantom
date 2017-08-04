@@ -2,7 +2,7 @@
 #define DEBUGOVERSERIAL_H
 
 #include <Arduino.h>
-#include "Utils.h"
+#include "Phantom.h"
 
 namespace Phantom {
 	class DebugOverSerial

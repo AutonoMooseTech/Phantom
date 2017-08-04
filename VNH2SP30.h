@@ -2,7 +2,7 @@
 #define VNH2SP30_H
 
 #include <Arduino.h>
-#include "Utils.h"
+#include "Phantom.h"
 #include "MotorController.h"
 
 namespace Phantom {

@@ -2,6 +2,7 @@
 #define SOLENOIDCONTROLLER_H
 
 #include <Arduino.h>
+#include "Phantom.h"
 
 namespace Phantom {
 	class SolenoidController {

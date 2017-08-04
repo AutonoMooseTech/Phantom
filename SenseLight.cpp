@@ -16,5 +16,5 @@ float SenseLight::get() {
 }
 
 void SenseLight::update() {
-	value = Utils::map(float(analogRead(pinAnalogIn)), 0.0f, 255.0f, -1.0f, 1.0f);
+	value = map(float(analogRead(pinAnalogIn)), 0.0f, 255.0f, -1.0f, 1.0f);
 }

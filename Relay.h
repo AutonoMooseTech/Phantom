@@ -2,6 +2,7 @@
 #define RELAY_H
 
 #include <Arduino.h>
+#include "Phantom.h"
 
 /*
 	   NO   NC

@@ -6,6 +6,7 @@ Originally authored by Simon Hogwood.
 #define TIMERBASE_H
 
 #include <Arduino.h>
+#include "Phantom.h"
 
 namespace Phantom {
 	class TimerBase {
