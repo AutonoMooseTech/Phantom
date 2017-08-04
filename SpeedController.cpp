@@ -7,7 +7,7 @@ SpeedController::SpeedController(uint8_t pinOutput): pinOutput(pinOutput) {
 }
 
 void SpeedController::set(float speed) {
-	this->speed = Utils::mapVal(speed, -1.0f, 1.0f, 0, 255);
+	this->speed = Utils::map(speed, -1.0f, 1.0f, 0, 255);
 }
 
 void SpeedController::setBounds(uint8_t min, uint8_t center, uint8_t max) {
