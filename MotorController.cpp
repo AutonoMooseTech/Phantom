@@ -13,10 +13,6 @@ void MotorController::set(float value) {
 	enabled = true;
 }
 
-float MotorController::getValue() {
-	return this->value;
-}
-
 void MotorController::disable() {
 	enabled = false;
 	update();

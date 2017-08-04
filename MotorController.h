@@ -10,7 +10,6 @@ namespace Phantom {
 		MotorController(uint8_t pinPWM, uint8_t pinDirA, uint8_t pinDirB);
 
 		void set(float value);
-		float getValue();
 
 		void disable();
 
