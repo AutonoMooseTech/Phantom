@@ -26,19 +26,19 @@ namespace Phantom {
 
 	// Constants and Defines
 
-	const uint8_t BIT0 = 0x01;
-	const uint8_t BIT1 = 0x02;
-	const uint8_t BIT2 = 0x04;
-	const uint8_t BIT3 = 0x08;
-	const uint8_t BIT4 = 0x10;
-	const uint8_t BIT5 = 0x20;
-	const uint8_t BIT6 = 0x40;
-	const uint8_t BIT7 = 0x80;
+	const uint8_t BIT0 = 0x01;	// 00000001
+	const uint8_t BIT1 = 0x02;	// 00000010
+	const uint8_t BIT2 = 0x04;	// 00000100
+	const uint8_t BIT3 = 0x08;	// 00001000
+	const uint8_t BIT4 = 0x10;	// 00010000
+	const uint8_t BIT5 = 0x20;	// 00100000
+	const uint8_t BIT6 = 0x40;	// 01000000
+	const uint8_t BIT7 = 0x80;	// 10000000
 
-	const uint8_t ON  = true;
-	const uint8_t OFF = false;
-	const uint8_t HI  = true;
-	const uint8_t LO  = false;
+	const uint8_t ON  = true;	// Same as HIGH
+	const uint8_t OFF = false;	// Same as LOW
+	const uint8_t HI  = true;	// Same as HI
+	const uint8_t LO  = false;	// Same as LO
 
 
 	// Data structures
@@ -75,28 +75,39 @@ namespace Phantom {
 	template<typename T> inline void togMask(T &data, T m)   { data ^= m; }          // toggle many bits
 
 
+	// Map an input value to an output
+	// Input and output types can be different
 	template<typename T, typename T2>
 	inline T map(T2 val, T2 in_min, T2 in_max, T out_min, T out_max) {
 		return T(val - in_min) * (out_max - out_min) / T(in_max - in_min) + out_min;
 	}
 
+	// Pulse and output HIGH and then return to LOW after given delay
+	// Note this function is blocking
 	inline void pulseHi(byte pin, uint32_t deltaUs = 0) {
 		digitalWrite(pin, HI);
 		if(deltaUs) delayMicroseconds(deltaUs);
 		digitalWrite(pin, LO);
 	}
 
+	// Pulse an output LOW and then return to HIGH after given delay
+	// Note this function is blocking
 	inline void pulseLo(byte pin, uint32_t deltaUs = 0) {
 		digitalWrite(pin, LO);
 		if(deltaUs) delayMicroseconds(deltaUs);
 		digitalWrite(pin, HI);
 	}
 
+	// Get the differentce of two numbers and return as an absolute value
+	// x = |(a - b)|
 	template<typename T>
 	inline T delta(T a, T b) {
 		return T(fabs(a - b));
 	}
 
+
+	// Return value within high and low limits
+	// #ifndef is needed because Arduino uses a macro for its equivalent
 	#ifndef constrain
 	#define constrain
 	template<typename T>
