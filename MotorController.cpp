@@ -21,6 +21,11 @@ void MotorController::setMax(uint8_t max) {
 	this->max = max;
 }
 
+void MotorController::setBounds(uint8_t min, uint8_t max) {
+	setMin(min);
+	setMax(max);
+}
+
 void MotorController::disable() {
 	enabled = false;
 	update();

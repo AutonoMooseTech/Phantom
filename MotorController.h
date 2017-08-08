@@ -13,6 +13,7 @@ namespace Phantom {
 
 		void setMin(uint8_t min);
 		void setMax(uint8_t max);
+		void setBounds(uint8_t min, uint8_t max);
 
 		void disable();
 
