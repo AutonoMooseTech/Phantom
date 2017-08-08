@@ -13,6 +13,14 @@ void MotorController::set(float value) {
 	enabled = true;
 }
 
+void MotorController::setMin(uint8_t min) {
+	this->min = min;
+}
+
+void MotorController::setMax(uint8_t max) {
+	this->max = max;
+}
+
 void MotorController::disable() {
 	enabled = false;
 	update();
