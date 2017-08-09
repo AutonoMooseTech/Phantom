@@ -8,12 +8,7 @@
 namespace Phantom {
 	class L298: public MotorController {
 	public:
-		L298(uint8_t pinPwm, uint8_t pinDirA, uint8_t pinDirB);
-		
-
-	private:
-		uint8_t pinPwm, pinDirA, pinDirB;
-		
+		explicit L298(uint8_t pinPwm, uint8_t pinDirA, uint8_t pinDirB);
 	};
 }
 
