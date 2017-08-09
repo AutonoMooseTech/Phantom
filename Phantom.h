@@ -79,7 +79,7 @@ namespace Phantom {
 	// Input and output types can be different
 	template<typename T, typename T2>
 	inline T map(T2 val, T2 in_min, T2 in_max, T out_min, T out_max) {
-		return T(val - in_min) * (out_max - out_min) / T(in_max - in_min) + out_min;
+		return (val - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 	}
 
 	// Pulse and output HIGH and then return to LOW after given delay
