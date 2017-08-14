@@ -14,7 +14,7 @@ namespace Phantom {
 
 		void add(Base* func, uint32_t time);
 
-		void clear(); 
+		void clearAll(); 
 
 		void update();
 	private:
@@ -24,7 +24,7 @@ namespace Phantom {
 			uint32_t time;
 		};
 		
-		static std::vector<task_s> tasks;
+		static std::vector<task_s> tasks; 
 	};
 }
 

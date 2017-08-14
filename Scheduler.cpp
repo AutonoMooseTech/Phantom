@@ -10,7 +10,7 @@ void Scheduler::add(Base* func, uint32_t time) {
 	tasks.push_back({func, millis() + time});
 }
 
-void Scheduler::clear() {
+void Scheduler::clearAll() {
 	tasks.clear();
 }
 
