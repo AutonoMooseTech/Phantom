@@ -14,7 +14,9 @@ namespace Phantom {
 
 		void add(Base* func, uint32_t time);
 
-		void clearAll(); 
+		void clearAll();
+
+		void clear(Base* func);
 
 		void update();
 	private:

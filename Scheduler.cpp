@@ -14,6 +14,15 @@ void Scheduler::clearAll() {
 	tasks.clear();
 }
 
+void Scheduler::clear(Base* func) {
+	for (auto i = tasks.begin(); i != tasks.end(); i++) {
+		auto task = (*i);
+		if (task.func == func) {
+			tasks.erase(i);
+		}
+	}
+}
+
 void Scheduler::update() {
 	for (auto i = tasks.begin(); i != tasks.end(); i++) {
 		auto task = (*i);
