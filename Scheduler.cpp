@@ -15,6 +15,7 @@ void Scheduler::clearAll() {
 }
 
 void Scheduler::clear(Base* func) {
+	// Iterate through entries and clear ones with matching class
 	for (auto i = tasks.begin(); i != tasks.end(); i++) {
 		auto task = (*i);
 		if (task.func == func) {
@@ -24,6 +25,7 @@ void Scheduler::clear(Base* func) {
 }
 
 void Scheduler::update() {
+	// Iterate through entries and run tasks that have reached their wait time
 	for (auto i = tasks.begin(); i != tasks.end(); i++) {
 		auto task = (*i);
 		if (task.time <= millis()) {
