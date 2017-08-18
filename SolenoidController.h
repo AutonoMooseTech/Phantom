@@ -23,7 +23,7 @@ namespace Phantom {
 		uint8_t pinTrigger;
 		uint16_t duration = 100; // in ms
 
-		enum state_t {OFF, ON};
+		enum state_t {OFF = LOW, ON = HIGH};
 		state_t state = state_t::OFF;
 		state_t stateLast = state_t::OFF;
 	};

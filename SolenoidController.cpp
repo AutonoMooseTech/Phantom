@@ -25,5 +25,5 @@ void SolenoidController::setDuration(uint16_t time) {
 }
 
 void SolenoidController::update() {
-	digitalWrite(pinTrigger, state == state_t::ON and stateLast == state_t::OFF);
+	digitalWrite(pinTrigger, state and !stateLast);
 }
