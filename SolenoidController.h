@@ -13,14 +13,14 @@ namespace Phantom {
 	public:
 		SolenoidController(uint8_t pinTrigger);
 		
-		void trigger();
-		void forceOff();
+		void trigger(); // Set the solenoid to ON
+		void forceOff(); // Force solenoid to OFF
 
-		void setDuration(uint16_t time);
+		void setDuration(uint16_t time); // Set maximum ON time
 
 		void update();
 	private:
-		uint8_t pinTrigger;
+		uint8_t pinTrigger; // Output pin
 		uint16_t duration = 100; // in ms
 
 		enum state_t {OFF = LOW, ON = HIGH};
