@@ -2,21 +2,22 @@
 
 using namespace Phantom;
 
-SolenoidController::SolenoidController(uint8_t pinTrigger): pinTrigger(pinTrigger) {
+SolenoidController::SolenoidController(uint8_t pinTrigger):
+	Scheduler(),
+	pinTrigger(pinTrigger) {
 	pinMode(pinTrigger, OUTPUT);
-}
-
-SolenoidController::SolenoidController(uint8_t pinTrigger, uint8_t pinVoltSense): pinTrigger(pinTrigger), pinVoltSense(pinVoltSense) {
-	pinMode(pinTrigger, OUTPUT);
-	pinMode(pinVoltSense, INPUT);
 }
 
 void SolenoidController::trigger() {
 	state = state_t::ON;
+	add(this, duration); // Add to scheduler
+	update();
 }
 
 void SolenoidController::forceOff() {
 	state = state_t::OFF;
+	clear(this); // Remove any instance from scheduler
+	update(); 
 }
 
 void SolenoidController::setDuration(uint16_t time) {
@@ -24,14 +25,5 @@ void SolenoidController::setDuration(uint16_t time) {
 }
 
 void SolenoidController::update() {
-	if (state == state_t::ON) {
-		if (stateLast == state_t::OFF) { // state changed from off to on
-			timeOfTrigger = millis();
-			digitalWrite(pinTrigger, HIGH);
-		}
-		else if (millis() - timeOfTrigger >= duration) { // state is on, but over timeout duration
-			state = state_t::OFF;
-			digitalWrite(pinTrigger, LOW);
-		}
-	}
+	digitalWrite(pinTrigger, state == state_t::ON and stateLast == state_t::OFF);
 }

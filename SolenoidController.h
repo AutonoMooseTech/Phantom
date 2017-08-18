@@ -3,12 +3,15 @@
 
 #include <Arduino.h>
 #include "Phantom.h"
+#include "Base.h"
+#include "Scheduler.h"
 
 namespace Phantom {
-	class SolenoidController {
+	class SolenoidController:
+		virtual public Base,
+		virtual private Scheduler {
 	public:
 		SolenoidController(uint8_t pinTrigger);
-		SolenoidController(uint8_t pinTrigger, uint8_t pinVoltSense);
 		
 		void trigger();
 		void forceOff();
@@ -17,14 +20,12 @@ namespace Phantom {
 
 		void update();
 	private:
-		uint8_t pinTrigger, pinVoltSense;
+		uint8_t pinTrigger;
 		uint16_t duration = 100; // in ms
 
 		enum state_t {OFF, ON};
 		state_t state = state_t::OFF;
 		state_t stateLast = state_t::OFF;
-
-		uint32_t timeOfTrigger;
 	};
 }
 
