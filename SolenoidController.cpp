@@ -16,7 +16,7 @@ void SolenoidController::trigger() {
 
 void SolenoidController::forceOff() {
 	state = state_t::OFF;
-	clear(this); // Remove any instance from scheduler
+	clear(this); // Remove any instances from scheduler
 	update(); 
 }
 
