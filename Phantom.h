@@ -112,6 +112,28 @@ namespace Phantom {
 		return S;
 	}
 
+	// Gets the index of the highest number in an array
+	//
+	template<typename T, typename T2>
+	inline T2 arrayMaxIndex(T a) {
+		T2 index = 0;
+		for (T2 i = 0, i < arraySize(a), i++) {
+			if (a[i] > a[index]) { index = i; }
+		}
+		return index;
+	}
+
+	// Gets the index of the lowest number in an array
+	//
+	template<typename T, typename T2>
+	inline T2 arrayMinIndex(T a) {
+		T2 index = 0;
+		for (T2 i = 0, i < arraySize(a), i++) {
+			if (a[i] < a[index]) { index = i; }
+		}
+		return index;
+	}
+
 	// Return value within high and low limits
 	// #ifndef is needed because Arduino uses a macro for its equivalent
 	#ifndef constrain
