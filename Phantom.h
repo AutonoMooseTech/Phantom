@@ -105,6 +105,12 @@ namespace Phantom {
 		return T(fabs(a - b));
 	}
 
+	// Gets the the length of an array
+	// Better than sizeof for array lengths
+	template <typename T,unsigned S>
+	inline unsigned arrayLength(const T (&v)[S]) {
+		return S;
+	}
 
 	// Return value within high and low limits
 	// #ifndef is needed because Arduino uses a macro for its equivalent
