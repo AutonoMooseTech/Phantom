@@ -114,7 +114,7 @@ namespace Phantom {
 		digitalWrite(pin, HI);
 	}
 
-	// Get the differentce of two numbers and return as an absolute value
+	// Get the difference of two numbers and return as an absolute value
 	// x = |(a - b)|
 	template<typename T>
 	inline T delta(T a, T b) {
