@@ -82,17 +82,33 @@ namespace Phantom {
 		return (val - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 	}
 
-	// Pulse and output HIGH and then return to LOW after given delay
+	// Pulse and output HIGH and then return to LOW after given delay (in milliseconds)
 	// Note this function is blocking
 	inline void pulseHi(byte pin, uint32_t deltaUs = 0) {
+		digitalWrite(pin, HI);
+		if(deltaUs) delay(deltaUs);
+		digitalWrite(pin, LO);
+	}
+
+	// Pulse and output HIGH and then return to LOW after given delay (in microseconds)
+	// Note this function is blocking
+	inline void pulseHiMicro(byte pin, uint32_t deltaUs = 0) {
 		digitalWrite(pin, HI);
 		if(deltaUs) delayMicroseconds(deltaUs);
 		digitalWrite(pin, LO);
 	}
 
-	// Pulse an output LOW and then return to HIGH after given delay
+	// Pulse an output LOW and then return to HIGH after given delay (in milliseconds)
 	// Note this function is blocking
 	inline void pulseLo(byte pin, uint32_t deltaUs = 0) {
+		digitalWrite(pin, LO);
+		if(deltaUs) delay(deltaUs);
+		digitalWrite(pin, HI);
+	}
+
+	// Pulse an output LOW and then return to HIGH after given delay (in microseconds)
+	// Note this function is blocking
+	inline void pulseLoMicro(byte pin, uint32_t deltaUs = 0) {
 		digitalWrite(pin, LO);
 		if(deltaUs) delayMicroseconds(deltaUs);
 		digitalWrite(pin, HI);
