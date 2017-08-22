@@ -15,8 +15,6 @@ namespace Phantom {
 
 		void setGlobal(bool global);
 
-		void update();
-
 	private:
 		MotorController& motorA;
 		MotorController& motorB;

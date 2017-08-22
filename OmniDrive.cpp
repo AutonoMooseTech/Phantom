@@ -18,11 +18,10 @@ void OmniDrive::set(float direction, float magnitude, float rotation) {
 	this->direction = direction;
 	this->magnitude = magnitude;
 	this->rotation 	= rotation;
-}
 
-void OmniDrive::update() {
-	xMagnitude = sin(this->direction*(PI/180)); //x component of the angle
-	yMagnitude = cos(this->direction*(PI/180)); //y component of the angle
+	maxPower = magnitude;
+	xMagnitude = sin(direction*(PI/180)); //x component of the angle
+	yMagnitude = cos(direction*(PI/180)); //y component of the angle
 
 	motorSpeedA = -xMagnitude + yMagnitude + rotation; //motor a
 	motorSpeedB =  xMagnitude + yMagnitude - rotation; //motor b
@@ -32,7 +31,12 @@ void OmniDrive::update() {
 	maxPower /= max(motorSpeedA, max(motorSpeedB, max(motorSpeedC, motorSpeedD)));
 
 	motorA.set(maxPower*motorSpeedA);
-	motorA.set(maxPower*motorSpeedB);
-	motorA.set(maxPower*motorSpeedC);
-	motorA.set(maxPower*motorSpeedD);
+	motorB.set(maxPower*motorSpeedB);
+	motorC.set(maxPower*motorSpeedC);
+	motorD.set(maxPower*motorSpeedD);
+
+	motorA.update();
+	motorB.update();
+	motorC.update();
+	motorD.update();
 }
