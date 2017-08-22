@@ -133,7 +133,7 @@ namespace Phantom {
 	template<typename T, typename T2>
 	inline T2 arrayMaxIndex(T a) {
 		T2 index = 0;
-		for (T2 i = 0, i < arraySize(a), i++) {
+		for (T2 i = 0; i < arraySize(a); i++) {
 			if (a[i] > a[index]) { index = i; }
 		}
 		return index;
@@ -144,7 +144,7 @@ namespace Phantom {
 	template<typename T, typename T2>
 	inline T2 arrayMinIndex(T a) {
 		T2 index = 0;
-		for (T2 i = 0, i < arraySize(a), i++) {
+		for (T2 i = 0; i < arraySize(a); i++) {
 			if (a[i] < a[index]) { index = i; }
 		}
 		return index;
