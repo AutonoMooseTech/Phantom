@@ -2,6 +2,8 @@
 
 using namespace Phantom;
 
+std::vector<std::pair<Base*, uint32_t>> Scheduler::tasks;
+
 Scheduler::Scheduler() {
 
 }
@@ -16,9 +18,9 @@ void Scheduler::clearAll() {
 
 void Scheduler::clear(Base* func) {
 	// Iterate through entries and clear ones with matching class
-	for (auto i = tasks.begin(); i != tasks.end(); i++) {
+	for (auto i = tasks.begin(); i < tasks.end(); i++) {
 		auto task = (*i);
-		if (task.func == func) {
+		if (task.first == func) {
 			tasks.erase(i);
 		}
 	}
@@ -26,11 +28,11 @@ void Scheduler::clear(Base* func) {
 
 void Scheduler::update() {
 	// Iterate through entries and run tasks that have reached their wait time
-	for (auto i = tasks.begin(); i != tasks.end(); i++) {
+	for (auto i = tasks.begin(); i < tasks.end(); i++) {
 		auto task = (*i);
-		if (task.time <= millis()) {
-			task.func->update(); // Run
-			tasks.erase(i); // Erase this item as it is no longer needed
+		if (task.second <= millis()) {
+			task.first->update(); // Run
+			tasks.erase(i);
 		}
 	}
 }

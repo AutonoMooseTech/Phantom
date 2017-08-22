@@ -19,14 +19,10 @@ namespace Phantom {
 		void clear(Base* func);
 
 		void update();
-	private:
 
-		struct task_s {
-			Base* func;
-			uint32_t time;
-		};
-		
-		static std::vector<task_s> tasks; 
+	private:
+		static std::vector<std::pair<Base*, uint32_t>> tasks;
+		 
 	};
 }
 
