@@ -8,8 +8,7 @@
 
 namespace Phantom {
 	class SolenoidController:
-		virtual public Base,
-		virtual private Scheduler {
+		virtual public Base {
 	public:
 		SolenoidController(uint8_t pinTrigger);
 		
@@ -20,6 +19,7 @@ namespace Phantom {
 
 		void update();
 	private:
+		Scheduler sched;
 		uint8_t pinTrigger; // Output pin
 		uint16_t duration = 100; // in ms
 
