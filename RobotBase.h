@@ -26,7 +26,7 @@ namespace Phantom {
 		virtual void enabledSetup();
 		virtual void enabledLoop();
 
-		void update();
+		virtual void update();
 
 	private:
 		state_t state;
