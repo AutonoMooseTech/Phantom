@@ -14,7 +14,7 @@ namespace Phantom {
 		uint32_t currTime, prevTime, updateTime;
 
 	public:
-		TimerBase(uint32_t interval = 100);
+		TimerBase(uint32_t interval);
 
 		void force();
 

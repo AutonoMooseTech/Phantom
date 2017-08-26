@@ -2,7 +2,7 @@
 
 using namespace Phantom;
 
-TimerBase::TimerBase(uint32_t interval = 100): prevTime(0), updateTime(interval) {
+TimerBase::TimerBase(uint32_t interval): prevTime(0), updateTime(interval) {
 	// Nothing to see here.
 }
 
