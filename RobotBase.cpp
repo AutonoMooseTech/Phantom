@@ -23,6 +23,18 @@ bool RobotBase::stateChanged() {
 	return state != stateLast;
 }
 
+void RobotBase::setup() {}
+
+void RobotBase::loop() {}
+
+void RobotBase::disabledSetup() {}
+
+void RobotBase::disabledLoop() {}
+
+void RobotBase::enabledSetup() {}
+
+void RobotBase::enabledLoop() {}
+
 void RobotBase::update() {
 	if (stateChanged()) {
 		switch (state) {

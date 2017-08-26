@@ -1,7 +1,6 @@
 #ifndef ROBOTBASE_H
 #define ROBOTBASE_H
 
-#include <Arduino.h>
 #include "Phantom.h"
 
 namespace Phantom {
