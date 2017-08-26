@@ -7,7 +7,7 @@
 namespace Phantom {
 	class RobotBase {
 	public:
-		virtual RobotBase();
+		RobotBase();
 
 		enum state_t {DISABLED, ENABLED};
 

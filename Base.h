@@ -7,7 +7,7 @@
 namespace Phantom {
 	class Base {
 	public:
-		virtual Base();
+		Base();
 
 		virtual void update();
 	};
