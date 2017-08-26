@@ -16,5 +16,5 @@ float SenseLight::get() {
 }
 
 void SenseLight::update() {
-	value = map(analogRead(pinAnalogIn), 0, 255, -1.0f, 1.0f);
+	value = map(analogRead(pinAnalogIn), uint32_t(0), uint32_t(1023), -1.0f, 1.0f);
 }
