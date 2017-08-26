@@ -28,7 +28,7 @@ void OmniDrive::set(float direction, float magnitude, float rotation) {
 	motorSpeedC = -xMagnitude + yMagnitude - rotation; //motor c
 	motorSpeedD =  xMagnitude + yMagnitude + rotation; //motor d
 
-	maxPower /= max(motorSpeedA, max(motorSpeedB, max(motorSpeedC, motorSpeedD)));
+	maxPower /= std::max({motorSpeedA, motorSpeedB, motorSpeedC, motorSpeedD});
 
 	motorA.set(maxPower*motorSpeedA);
 	motorB.set(maxPower*motorSpeedB);

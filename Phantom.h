@@ -2,6 +2,8 @@
 #define PHANTOM_H
 
 #include <Arduino.h>
+#undef min
+#undef max
 
 namespace Phantom {
 	// Type Definitions

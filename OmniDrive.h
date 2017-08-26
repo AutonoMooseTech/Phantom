@@ -1,9 +1,9 @@
 #ifndef OMNIDRIVE_H
 #define OMNIDRIVE_H
 
-#include <Arduino.h>
 #include "Phantom.h"
 #include "MotorController.h"
+#include <algorithm>
 
 namespace Phantom {
 	class OmniDrive {
