@@ -8,13 +8,12 @@ namespace Phantom {
 	class SenseLight {
 	public:
 		SenseLight(uint8_t pinAnalogIn);
-		SenseLight(uint8_t pinAnalogIn, uint8_t pinLightOut);
 
 		float get();
 
 		void update();
 	private:
-		uint8_t pinAnalogIn, pinLightOut;
+		uint8_t pinAnalogIn;
 		float value;
 	};
 }
