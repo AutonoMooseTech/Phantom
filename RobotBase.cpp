@@ -15,7 +15,7 @@ void RobotBase::disable() {
 }
 
 void RobotBase::setState(state_t state) {
-	stateLast = state;
+	stateLast = this->state;
 	this->state = state;
 }
 
