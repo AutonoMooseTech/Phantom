@@ -27,9 +27,6 @@ namespace Phantom {
 		int16_t getX();
 		int16_t getY();
 		int16_t getZ();
-
-	private:
-		uint8_t address;
 	};
 }
 

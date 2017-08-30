@@ -2,7 +2,7 @@
 
 using namespace Phantom;
 
-MPU9250Accel::MPU9250Accel(uint8_t address): MPU9250(address), address(address) {
+MPU9250Accel::MPU9250Accel(uint8_t address): MPU9250(address) {
 
 }
 

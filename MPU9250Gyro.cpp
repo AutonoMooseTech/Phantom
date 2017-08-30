@@ -2,7 +2,7 @@
 
 using namespace Phantom;
 
-MPU9250Gyro::MPU9250Gyro(uint8_t address): MPU9250(address), address(address) {
+MPU9250Gyro::MPU9250Gyro(uint8_t address): MPU9250(address) {
 
 }
 
