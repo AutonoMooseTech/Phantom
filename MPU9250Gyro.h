@@ -18,6 +18,8 @@ namespace Phantom {
 		
 		void init();
 
+		//void zero(); // Todo
+
 		int16_t get(axis_t axis);
 
 		std::initializer_list<int16_t> get();
