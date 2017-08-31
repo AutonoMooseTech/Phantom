@@ -9,8 +9,9 @@ MotorController::MotorController(uint8_t pinPWM, uint8_t pinDirA, uint8_t pinDir
 }
 
 void MotorController::set(float value) {
-	this->value = value;
-	enabled = true;
+	digitalWrite(this->pinDirA, value > 0.0f); // Use sign to set direction pins 
+	digitalWrite(this->pinDirB, value < 0.0f);
+	analogWrite(this->pinPWM, map(float(fabs(value)), 0.0f, 1.0f, min, max)); // Write PWM Value
 }
 
 void MotorController::setMin(uint8_t min) {
@@ -27,19 +28,7 @@ void MotorController::setBounds(uint8_t min, uint8_t max) {
 }
 
 void MotorController::disable() {
-	enabled = false;
-	update();
-}
-
-void MotorController::update() {
-	if (enabled) {
-		digitalWrite(pinDirA, value > 0.0f); // Use sign to set direction pins 
-		digitalWrite(pinDirB, value < 0.0f);
-		analogWrite(pinPWM, map(float(fabs(value)), 0.0f, 1.0f, min, max)); // Write PWM Value
-	}
-	else {
-		digitalWrite(pinDirA, LOW); // Use sign to set direction pins 
-		digitalWrite(pinDirA, LOW);
-		digitalWrite(pinPWM, LOW);
-	}
+	digitalWrite(this->pinDirA, LOW); // Use sign to set direction pins 
+	digitalWrite(this->pinDirA, LOW);
+	digitalWrite(this->pinPWM, LOW);
 }
