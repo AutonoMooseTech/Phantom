@@ -13,19 +13,9 @@ namespace Phantom {
 
 		void setBounds(uint8_t min, uint8_t center, uint8_t max);
 		void setBounds(uint8_t min, uint8_t deadbandMin, uint8_t center, uint8_t deadbandMax, uint8_t max);
-		
-		void update();
 	private:
 		uint8_t pinOutput;
-
-		float speed = 0.0f;
-
-		// Bounds
-		uint8_t min;
-		uint8_t deadbandMin;
-		uint8_t	center;
-		uint8_t	deadbandMax;
-		uint8_t max;
+		uint8_t min, deadbandMin, center, deadbandMax, max;
 	};
 }
 

@@ -7,7 +7,13 @@ SpeedController::SpeedController(uint8_t pinOutput): pinOutput(pinOutput) {
 }
 
 void SpeedController::set(float speed) {
-	this->speed = map(speed, -1.0f, 1.0f, 0, 255);
+	speed = map(speed, -1.0f, 1.0f, 0, 255);
+	if (speed >= deadbandMin and speed <= deadbandMin) {
+		analogWrite(pinOutput, center);
+	}
+	else {
+		analogWrite(pinOutput, constrain(speed, min, max));
+	}
 }
 
 void SpeedController::setBounds(uint8_t min, uint8_t center, uint8_t max) {
@@ -20,14 +26,4 @@ void SpeedController::setBounds(uint8_t min, uint8_t deadbandMin, uint8_t center
 	this->center = center;
 	this->deadbandMax = deadbandMax;
 	this->max = max;
-}
-
-
-void SpeedController::update() {
-	if (speed >= deadbandMin and speed <= deadbandMin) {
-		analogWrite(pinOutput, center);
-	}
-	else {
-		analogWrite(pinOutput, constrain(speed, min, max));
-	}
 }
