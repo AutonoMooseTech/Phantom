@@ -34,9 +34,4 @@ void OmniDrive::set(float direction, float magnitude, float rotation) {
 	motorB.set(maxPower*motorSpeedB);
 	motorC.set(maxPower*motorSpeedC);
 	motorD.set(maxPower*motorSpeedD);
-
-	motorA.update();
-	motorB.update();
-	motorC.update();
-	motorD.update();
 }
