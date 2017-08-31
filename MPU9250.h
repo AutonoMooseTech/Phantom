@@ -1,7 +1,6 @@
 #ifndef MPU9250_H
 #define MPU9250_H
 
-#include <Arduino.h>
 #include "Phantom.h"
 #include "SensorBase.h"
 #include <Wire.h>
