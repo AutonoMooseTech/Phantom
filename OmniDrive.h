@@ -4,6 +4,7 @@
 #include "Phantom.h"
 #include "MotorController.h"
 #include <algorithm>
+#include <initializer_list>
 
 namespace Phantom {
 	class OmniDrive {
