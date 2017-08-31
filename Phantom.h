@@ -83,8 +83,8 @@ namespace Phantom {
 
 	// Map an input value to an output
 	// Input and output types can be different
-	template<typename T, typename T2>
-	inline T map(T2 val, T2 in_min, T2 in_max, T out_min, T out_max) {
+	template<typename T, typename T2, typename T3>
+	inline T map(T3 val, T2 in_min, T2 in_max, T out_min, T out_max) {
 		return (val - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 	}
 
