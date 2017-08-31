@@ -1,11 +1,11 @@
 #ifndef MOTORCONTROLLER_H
 #define MOTORCONTROLLER_H
 
-#include <Arduino.h>
 #include "Phantom.h"
+#include "MotorBase.h"
 
 namespace Phantom {
-	class MotorController {
+	class MotorController: public MotorBase {
 	public:
 		MotorController(uint8_t pinPWM, uint8_t pinDirA, uint8_t pinDirB);
 

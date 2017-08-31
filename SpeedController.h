@@ -1,11 +1,11 @@
 #ifndef SPEEDCONTROLLER_H
 #define SPEEDCONTROLLER_H
 
-#include <Arduino.h>
 #include "Phantom.h"
+#include "MotorBase.h"
 
 namespace Phantom {
-	class SpeedController {
+	class SpeedController: public MotorBase {
 	public:
 		SpeedController(uint8_t pinOutput);
 
