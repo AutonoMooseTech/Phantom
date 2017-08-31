@@ -11,7 +11,6 @@ namespace Phantom {
 		float get();
 	private:
 		uint8_t pinAnalogIn;
-		float value;
 	};
 }
 
