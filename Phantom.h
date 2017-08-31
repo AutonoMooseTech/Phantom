@@ -1,6 +1,10 @@
 #ifndef PHANTOM_H
 #define PHANTOM_H
 
+	#ifndef _VARIANT_ARDUINO_ZERO_
+	#include <StandardCplusplus.h>
+	#endif
+
 #include <Arduino.h>
 #undef min
 #undef max
