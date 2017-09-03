@@ -9,6 +9,11 @@
 #undef min
 #undef max
 #undef abs
+#undef LOW
+#undef HIGH
+
+const bool HIGH = true;
+const bool LOW = false;
 
 namespace Phantom {
 	// Type Definitions
