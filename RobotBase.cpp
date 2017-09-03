@@ -15,7 +15,6 @@ void RobotBase::disable() {
 }
 
 void RobotBase::setState(state_t state) {
-	stateLast = this->state;
 	this->state = state;
 }
 
@@ -48,4 +47,5 @@ void RobotBase::update() {
 			case state_t::ENABLED: 	enabledLoop(); 	break;
 		}
 	}
+	stateLast = this->state;
 }
