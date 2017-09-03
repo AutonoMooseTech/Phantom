@@ -8,6 +8,7 @@
 #include <Arduino.h>
 #undef min
 #undef max
+#undef abs
 
 namespace Phantom {
 	// Type Definitions
