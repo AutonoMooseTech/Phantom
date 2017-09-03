@@ -1,7 +1,7 @@
 #ifndef PHANTOM_H
 #define PHANTOM_H
 
-	#ifndef _VARIANT_ARDUINO_ZERO_
+	#ifndef ARDUINO_SAM_ZERO
 	#include <StandardCplusplus.h>
 	#endif
 
