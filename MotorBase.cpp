@@ -9,3 +9,7 @@ MotorBase::MotorBase() {
 void MotorBase::set(float speed) {
 
 }
+
+void MotorBase::disable() {
+	
+}

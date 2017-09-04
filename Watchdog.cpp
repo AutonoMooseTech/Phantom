@@ -17,12 +17,12 @@ void Watchdog::check() {
 	}
 }
 
-void Watchdog::addInstance(std::initializer_list<MotorController> iList) {
+void Watchdog::addInstance(std::initializer_list<MotorBase> iList) {
 	for (auto i = iList.begin(); i < iList.end(); i++) {
 		instances.push_back(*i);
 	}
 }
 
-void Watchdog::addInstance(MotorController instance) {
+void Watchdog::addInstance(MotorBase instance) {
 	instances.push_back(instance);
 }

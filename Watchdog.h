@@ -2,7 +2,7 @@
 #define WATCHDOG_H
 
 #include "Phantom.h"
-#include "MotorController.h"
+#include "MotorBase.h"
 #include <initializer_list>
 #include <vector>
 
@@ -13,14 +13,14 @@ namespace Phantom {
 
 		void pat(); // Pat the doggo
 
-		void addInstance(std::initializer_list<MotorController> iList);
-		void addInstance(MotorController instance);
+		void addInstance(std::initializer_list<MotorBase> iList);
+		void addInstance(MotorBase instance);
 
 		void check();
 	private:
 		uint32_t timeout;
 		uint32_t lastTime;
-		std::vector<MotorController> instances;
+		std::vector<MotorBase> instances;
 	};
 }
 

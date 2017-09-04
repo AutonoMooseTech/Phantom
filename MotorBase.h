@@ -7,6 +7,7 @@ namespace Phantom {
 		MotorBase();
 
 		virtual void set(float speed);
+		virtual void disable();
 	};
 }
 
