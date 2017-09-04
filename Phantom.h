@@ -11,9 +11,16 @@
 #undef abs
 #undef LOW
 #undef HIGH
+#undef INPUT
+#undef OUTPUT
+#undef INPUT_PULLUP
 
-const bool HIGH = true;
-const bool LOW = false;
+const bool HIGH = 1;
+const bool LOW = 0;
+
+const uint8_t INPUT = 0x0;
+const uint8_t OUTPUT = 0x1;
+const uint8_t INPUT_PULLUP = 0x2;
 
 namespace Phantom {
 	// Type Definitions
