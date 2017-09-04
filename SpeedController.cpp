@@ -27,3 +27,7 @@ void SpeedController::setBounds(uint8_t min, uint8_t deadbandMin, uint8_t center
 	this->deadbandMax = deadbandMax;
 	this->max = max;
 }
+
+void SpeedController::disable() {
+	set(0.0f);
+}
