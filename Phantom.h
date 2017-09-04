@@ -80,18 +80,18 @@ namespace Phantom {
 		};
 	};
 
-
 	// Inline Functions
 
 	template<typename T> inline bool getBit(T data,  byte n) { return (data &= (1u << n)); } // test nth bit
 	template<typename T> inline void setBit(T &data, byte n) { data |= (1u << n); }   // set nth bit
-	template<typename T> inline void clrBit(T &data, byte n) { data &= ~(1u << n); }  // clear nth bit
-	template<typename T> inline void togBit(T &data, byte n) { data ^= (1u << n); }   // toggle nth bit
+	template<typename T> inline void clearBit(T &data, byte n) { data &= ~(1u << n); }  // clear nth bit
+	template<typename T> inline void toggleBit(T &data, byte n) { data ^= (1u << n); }   // toggle nth bit
+	template<typename T> inline void changeBit(T &data, byte n, bool x) { data = (-x ^ data) & (1 << n); }
 
 	template<typename T> inline T    getMask(T data,  T m)   { return (data &= m); } // test many bits
 	template<typename T> inline void setMask(T &data, T m)   { data |= m; }          // set many bits
-	template<typename T> inline void clrMask(T &data, T m)   { data &= ~m; }         // clear many bits
-	template<typename T> inline void togMask(T &data, T m)   { data ^= m; }          // toggle many bits
+	template<typename T> inline void clearMask(T &data, T m)   { data &= ~m; }         // clear many bits
+	template<typename T> inline void toggleMask(T &data, T m)   { data ^= m; }          // toggle many bits
 
 
 	// Map an input value to an output
