@@ -2,14 +2,14 @@
 #define OMNIDRIVE_H
 
 #include "Phantom.h"
-#include "MotorController.h"
+#include "MotorBase.h"
 #include <algorithm>
 #include <initializer_list>
 
 namespace Phantom {
 	class OmniDrive {
 	public:
-		OmniDrive(MotorController& motorA, MotorController& motorB, MotorController& motorC, MotorController& motorD);
+		OmniDrive(MotorBase& motorA, MotorBase& motorB, MotorBase& motorC, MotorBase& motorD);
 
 		void set(float direction, float magnitude);
 		void set(float direction, float magnitude, float rotation);
@@ -17,10 +17,10 @@ namespace Phantom {
 		void setGlobal(bool global);
 
 	private:
-		MotorController& motorA;
-		MotorController& motorB;
-		MotorController& motorC;
-		MotorController& motorD;
+		MotorBase& motorA;
+		MotorBase& motorB;
+		MotorBase& motorC;
+		MotorBase& motorD;
 
 		float direction;
 		float magnitude;

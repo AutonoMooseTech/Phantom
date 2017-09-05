@@ -2,7 +2,7 @@
 
 using namespace Phantom;
 
-OmniDrive::OmniDrive(MotorController& motorA, MotorController& motorB, MotorController& motorC, MotorController& motorD):
+OmniDrive::OmniDrive(MotorBase& motorA, MotorBase& motorB, MotorBase& motorC, MotorBase& motorD):
 	motorA(motorA),
 	motorB(motorB),
 	motorC(motorC),
