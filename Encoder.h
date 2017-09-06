@@ -21,9 +21,9 @@ namespace Phantom {
 
 		void update();
 		
-	private:
 		uint8_t pinA;
 		uint8_t pinB;
+	private:
 		int32_t value;
 		direction_t direction;
 
