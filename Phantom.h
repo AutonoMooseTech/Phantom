@@ -163,11 +163,12 @@ namespace Phantom {
 	}
 
 	// Return value within high and low limits
-	// #ifndef is needed because Arduino uses a macro for its equivalent
-	#ifndef constrain
-	#define constrain
-	template<typename T>
-	inline T constrain(T x, T a, T b) {
+	// #ifndef is needed because Arduino uses a macro for its equivalen
+	#ifdef constrain
+	#undef constrain
+	#endif
+	template<typename T, typename T2>
+	inline T2 constrain(T x, T2 a, T2 b) {
 		if(x < a) {
 			return a;
 		}
@@ -177,7 +178,6 @@ namespace Phantom {
 		else
 			return x;
 	}
-	#endif
 }
 
 #endif
