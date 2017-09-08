@@ -9,18 +9,21 @@
 #undef min
 #undef max
 #undef abs
+
+// Digital States
 #undef LOW
 #undef HIGH
+enum {LOW, HIGH};
+// Pin Modes
 #undef INPUT
 #undef OUTPUT
 #undef INPUT_PULLUP
-
-// Digital States
-enum {LOW, HIGH};
-// Pin Modes
 enum {INPUT, OUTPUT, INPUT_PULLUP};
 // Interrupt Trigger Types
-enum {CHANGE = 1, FALLING = 2, RISING = 3}
+#undef CHANGE
+#undef FALLING
+#undef RISING
+enum {CHANGE = 1, FALLING = 2, RISING = 3};
 
 namespace Phantom {
 	// Type Definitions
