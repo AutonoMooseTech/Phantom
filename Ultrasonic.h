@@ -2,6 +2,7 @@
 #define ULTRASONIC_H
 
 #include "Phantom.h"
+#include "Pulse.h"
 
 namespace Phantom {
 	class Ultrasonic {
