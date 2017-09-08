@@ -15,10 +15,12 @@
 #undef OUTPUT
 #undef INPUT_PULLUP
 
-
+// Digital States
 enum {LOW, HIGH};
-
+// Pin Modes
 enum {INPUT, OUTPUT, INPUT_PULLUP};
+// Interrupt Trigger Types
+enum {CHANGE = 1, FALLING = 2, RISING = 3}
 
 namespace Phantom {
 	// Type Definitions
