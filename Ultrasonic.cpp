@@ -12,7 +12,7 @@ float Ultrasonic::get() {
 }
 
 float Ultrasonic::aquire() {
-	pulseHiMicro(trigPin, trigPulseDelta);
+	pulseHighMicro(trigPin, trigPulseDelta);
 	distance = pulseIn(echoPin, HIGH, 5000) / 5.8f;
 	return distance;
 }

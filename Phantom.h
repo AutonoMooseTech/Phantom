@@ -15,12 +15,10 @@
 #undef OUTPUT
 #undef INPUT_PULLUP
 
-const bool HIGH = 1;
-const bool LOW = 0;
 
-const uint8_t INPUT = 0;
-const uint8_t OUTPUT = 1;
-const uint8_t INPUT_PULLUP = 2;
+enum {LOW, HIGH};
+
+enum {INPUT, OUTPUT, INPUT_PULLUP};
 
 namespace Phantom {
 	// Type Definitions
@@ -53,11 +51,6 @@ namespace Phantom {
 	const uint8_t BIT5 = 0x20;	// 00100000
 	const uint8_t BIT6 = 0x40;	// 01000000
 	const uint8_t BIT7 = 0x80;	// 10000000
-
-	const uint8_t ON  = true;	// Same as HIGH
-	const uint8_t OFF = false;	// Same as LOW
-	const uint8_t HI  = true;	// Same as HI
-	const uint8_t LO  = false;	// Same as LO
 
 
 	// Data structures
@@ -103,34 +96,34 @@ namespace Phantom {
 
 	// Pulse and output HIGH and then return to LOW after given delay (in milliseconds)
 	// Note this function is blocking
-	inline void pulseHi(byte pin, uint32_t deltaUs = 0) {
-		digitalWrite(pin, HI);
+	inline void pulseHigh(byte pin, uint32_t deltaUs = 0) {
+		digitalWrite(pin, HIGH);
 		if(deltaUs) delay(deltaUs);
-		digitalWrite(pin, LO);
+		digitalWrite(pin, LOW);
 	}
 
 	// Pulse and output HIGH and then return to LOW after given delay (in microseconds)
 	// Note this function is blocking
-	inline void pulseHiMicro(byte pin, uint32_t deltaUs = 0) {
-		digitalWrite(pin, HI);
+	inline void pulseHighMicro(byte pin, uint32_t deltaUs = 0) {
+		digitalWrite(pin, HIGH);
 		if(deltaUs) delayMicroseconds(deltaUs);
-		digitalWrite(pin, LO);
+		digitalWrite(pin, LOW);
 	}
 
 	// Pulse an output LOW and then return to HIGH after given delay (in milliseconds)
 	// Note this function is blocking
-	inline void pulseLo(byte pin, uint32_t deltaUs = 0) {
-		digitalWrite(pin, LO);
+	inline void pulseLow(byte pin, uint32_t deltaUs = 0) {
+		digitalWrite(pin, LOW);
 		if(deltaUs) delay(deltaUs);
-		digitalWrite(pin, HI);
+		digitalWrite(pin, HIGH);
 	}
 
 	// Pulse an output LOW and then return to HIGH after given delay (in microseconds)
 	// Note this function is blocking
-	inline void pulseLoMicro(byte pin, uint32_t deltaUs = 0) {
-		digitalWrite(pin, LO);
+	inline void pulseLowMicro(byte pin, uint32_t deltaUs = 0) {
+		digitalWrite(pin, LOW);
 		if(deltaUs) delayMicroseconds(deltaUs);
-		digitalWrite(pin, HI);
+		digitalWrite(pin, HIGH);
 	}
 
 	// Get the difference of two numbers and return as an absolute value
