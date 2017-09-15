@@ -9,7 +9,3 @@ DigitalOutput::DigitalOutput(uint8_t pin): pin(pin) {
 void DigitalOutput::set(bool state) {
 	digitalWrite(pin, state);
 }
-
-void DigitalOutput::set(state_t state) {
-	set(bool(state));
-}
