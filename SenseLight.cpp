@@ -7,5 +7,5 @@ SenseLight::SenseLight(uint8_t pinAnalogIn): pinAnalogIn(pinAnalogIn) {
 }
 
 float SenseLight::get() {
-	return map(analogRead(pinAnalogIn), uint32_t(0), uint32_t(1023), -1.0f, 1.0f);
+	return map(analogRead(pinAnalogIn), 0, 1023, 0.0f, 1.0f);
 }
