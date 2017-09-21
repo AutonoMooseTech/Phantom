@@ -18,7 +18,9 @@ namespace Phantom {
 		
 		void init();
 
-		//void zero(); // Todo
+		void callibrate();
+
+		void reset();
 
 		int16_t get(axis_t axis);
 
@@ -26,7 +28,18 @@ namespace Phantom {
 
 		int16_t getX();
 		int16_t getY();
-		int16_t getZ();
+		float getZ();
+
+		void update();
+		int16_t centers[3] = {0, 0, -17};
+	private:
+		uint8_t address;
+		
+		int16_t deadbands[3] = {50, 50, 50};
+		float readings[3] = {0.0, 0.0, 0.0};
+
+		uint32_t timeLast = millis();
+		uint32_t timeNow = 0;
 	};
 }
 
