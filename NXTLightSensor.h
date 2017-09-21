@@ -1,10 +1,9 @@
 #ifndef NXTLIGHTSENSOR_H
 #define NXTLIGHTSENSOR_H
 
-#include <Arduino.h>
-#include "../Phantom.h"
-#include "../Base.h"
-#include "../Scheduler.h"
+#include "Phantom.h"
+#include "Base.h"
+#include "Scheduler.h"
 
 namespace Phantom {
 	class NXTLightSensor: virtual public Base, public Scheduler {

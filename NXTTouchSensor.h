@@ -2,16 +2,16 @@
 #define NXTTOUCHSENSOR_H
 
 #include <Arduino.h>
-#include "../Phantom.h"
-#include "../Base.h"
-#include "../Scheduler.h"
+#include "Phantom.h"
+#include "Base.h"
+#include "Scheduler.h"
 
 namespace Phantom {
-	class NXTTouchSensor: virtual public Base, virtual public Scheduler {
+	class NXTTouchSensor {
 	public:
 		NXTTouchSensor(uint8_t pinInput);
 		
-		void get();
+		float get();
 
 		void update();
 
