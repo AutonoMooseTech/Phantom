@@ -7,6 +7,7 @@ MPU9250::MPU9250(uint8_t address): address(address) {
 
 void MPU9250::initI2C() {
 	Wire.begin();
+
 	// Power management (wake up)
 	Wire.beginTransmission(address);
 	Wire.write(0x6B);

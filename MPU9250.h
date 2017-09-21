@@ -24,9 +24,7 @@ namespace Phantom {
 
 		int16_t aquire(uint8_t reg);
 		int16_t aquire(register_t reg);
-
 		
-
 	private:
 		uint8_t address;
 	};
