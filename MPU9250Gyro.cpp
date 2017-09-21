@@ -53,12 +53,12 @@ float MPU9250Gyro::getZ() {
 }
 
 void MPU9250Gyro::update() {
+	uint32_t currentTime = millis();
 	for (int i = axis_t::X; i <= axis_t::Z; i++) {
 		int16_t value = getRaw(axis_t(i)) - centers[i];
-		if (fabs(value >= deadband)) {
-			readings[i] += value / -16.4; 		// Adjust to sensor sensitivity
-			readings[i] *= millis() - timeLast; // Compensate for time delta
-			readings[i] /= 1000; 				// Integer to float adjustment
+		if (fabs(value) >= deadband) {
+			readings[i] += value / -16.4 * (currentTime - timeLast) / 1000;
 		}
 	}
+	timeLast = currentTime;
 }
