@@ -22,7 +22,7 @@ namespace Phantom {
 
 		void reset();
 
-		int16_t get(axis_t axis);
+		int16_t getRaw(axis_t axis);
 
 		std::initializer_list<int16_t> get();
 
@@ -31,15 +31,15 @@ namespace Phantom {
 		float getZ();
 
 		void update();
-		int16_t centers[3] = {0, 0, -17};
 	private:
 		uint8_t address;
 		
-		int16_t deadbands[3] = {50, 50, 50};
+		int16_t deadband = 50;
+		int16_t centers[3] = {0, 0, -17};
+
 		float readings[3] = {0.0, 0.0, 0.0};
 
 		uint32_t timeLast = millis();
-		uint32_t timeNow = 0;
 	};
 }
 

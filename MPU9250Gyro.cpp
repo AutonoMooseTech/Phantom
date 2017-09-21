@@ -24,7 +24,7 @@ void MPU9250Gyro::reset() {
 	readings[2] = 0;
 }
 
-int16_t MPU9250Gyro::get(axis_t axis) {
+int16_t MPU9250Gyro::getRaw(axis_t axis) {
 	switch(axis) {
 		case axis_t::X: return aquire(register_t::GYRO_X); break;
 		case axis_t::Y: return aquire(register_t::GYRO_Y); break;
@@ -34,9 +34,9 @@ int16_t MPU9250Gyro::get(axis_t axis) {
 
 std::initializer_list<int16_t> MPU9250Gyro::get() {
 	return {
-		get(axis_t::X),
-		get(axis_t::Y),
-		get(axis_t::Z)
+		readings[axis_t::X],
+		readings[axis_t::Y],
+		readings[axis_t::Z]
 	};
 }
 
@@ -53,10 +53,12 @@ float MPU9250Gyro::getZ() {
 }
 
 void MPU9250Gyro::update() {
-	timeNow = millis();
-	int16_t value = get(axis_t(2)) - centers[2];
-	if (fabs(value) >= deadbands[2]) {
-		readings[2] += value / -16.4 * (timeNow - timeLast) / 1000;
+	for (int i = axis_t::X; i <= axis_t::Z; i++) {
+		int16_t value = getRaw(axis_t(i)) - centers[i];
+		if (fabs(value >= deadband)) {
+			readings[i] += value / -16.4; 		// Adjust to sensor sensitivity
+			readings[i] *= millis() - timeLast; // Compensate for time delta
+			readings[i] /= 1000; 				// Integer to float adjustment
+		}
 	}
-	timeLast = timeNow;
 }
