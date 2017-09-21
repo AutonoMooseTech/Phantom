@@ -60,7 +60,7 @@ namespace Phantom {
 
 	// Inline Functions
 
-	template<typename T> inline bool getBit(T data,  byte n) { return (data &= (1u << n)); } // test nth bit
+	template<typename T, typename T2> inline bool getBit(T data,  T2 n) { return (data &= (1u << n)); } // test nth bit
 	template<typename T> inline void setBit(T &data, byte n) { data |= (1u << n); }   // set nth bit
 	template<typename T> inline void clearBit(T &data, byte n) { data &= ~(1u << n); }  // clear nth bit
 	template<typename T> inline void toggleBit(T &data, byte n) { data ^= (1u << n); }   // toggle nth bit
