@@ -11,26 +11,13 @@ namespace Phantom {
 	public:
 		OmniDrive(MotorBase& motorA, MotorBase& motorB, MotorBase& motorC, MotorBase& motorD);
 
-		void set(float direction, float magnitude);
-		void set(float direction, float magnitude, float rotation);
-
-		void setGlobal(bool global);
+		void set(float direction, float magnitude, float angle);
 
 	private:
 		MotorBase& motorA;
 		MotorBase& motorB;
 		MotorBase& motorC;
 		MotorBase& motorD;
-
-		float direction;
-		float magnitude;
-		float rotation;
-
-		bool global;
-
-		float xMagnitude, yMagnitude;
-		float motorSpeedA, motorSpeedB, motorSpeedC, motorSpeedD;
-		float maxPower;
 	};
 }
 
