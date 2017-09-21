@@ -29,6 +29,6 @@ void MotorController::setBounds(uint8_t min, uint8_t max) {
 
 void MotorController::disable() {
 	digitalWrite(this->pinDirA, LOW); // Use sign to set direction pins 
-	digitalWrite(this->pinDirA, LOW);
+	digitalWrite(this->pinDirB, LOW);
 	digitalWrite(this->pinPWM, LOW);
 }
