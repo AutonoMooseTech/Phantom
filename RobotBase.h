@@ -2,6 +2,7 @@
 #define ROBOTBASE_H
 
 #include "Phantom.h"
+#include "Scheduler.h"
 
 namespace Phantom {
 	class RobotBase {
@@ -28,6 +29,8 @@ namespace Phantom {
 		void update();
 
 	private:
+		Scheduler scheduler;
+
 		state_t state;
 		state_t stateLast;
 	};

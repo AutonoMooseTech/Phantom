@@ -35,6 +35,7 @@ void RobotBase::enabledSetup() {}
 void RobotBase::enabledLoop() {}
 
 void RobotBase::update() {
+	scheduler.update();
 	if (stateChanged()) {
 		switch (state) {
 			case state_t::DISABLED: disabledSetup();	break;
