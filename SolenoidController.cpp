@@ -9,6 +9,7 @@ SolenoidController::SolenoidController(uint8_t pinTrigger):
 
 void SolenoidController::trigger() {
 	state = state_t::ON;
+	stateLast = state_t::OFF;
 	sched.add(this, duration); // Add to schedulers
 	update();
 }
