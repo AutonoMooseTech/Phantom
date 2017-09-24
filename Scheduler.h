@@ -5,23 +5,23 @@
 
 #include "Phantom.h"
 #include <vector>
-#include "Base.h"
+#include "SchedulerBase.h"
 
 namespace Phantom {
 	class Scheduler {
 	public:
 		Scheduler();
 
-		void add(Base* func, uint32_t time);
+		void add(SchedulerBase* func, uint32_t time);
 
 		void clearAll();
 
-		void clear(Base* func);
+		void clear(SchedulerBase* func);
 
 		void update();
 
 	private:
-		static std::vector<std::pair<Base*, uint32_t>> tasks;
+		static std::vector<std::pair<SchedulerBase*, uint32_t>> tasks;
 		 
 	};
 }

@@ -3,20 +3,22 @@
 using namespace Phantom;
 
 SolenoidController::SolenoidController(uint8_t pinTrigger):
-	pinTrigger(pinTrigger) {
+	SchedulerBase(),
+	pinTrigger(pinTrigger),
+	scheduler() {
 	pinMode(pinTrigger, OUTPUT);
 }
 
 void SolenoidController::trigger() {
 	state = state_t::ON;
 	stateLast = state_t::OFF;
-	sched.add(this, duration); // Add to schedulers
+	scheduler.add(this, duration); // Add to schedulers
 	update();
 }
 
 void SolenoidController::forceOff() {
 	state = state_t::OFF;
-	sched.clear(this); // Remove any instances from scheduler
+	scheduler.clear(this); // Remove any instances from scheduler
 	update(); 
 }
 

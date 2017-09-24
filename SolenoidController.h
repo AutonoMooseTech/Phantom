@@ -1,14 +1,13 @@
 #ifndef SOLENOIDCONTROLLER_H
 #define SOLENOIDCONTROLLER_H
 
-#include <Arduino.h>
 #include "Phantom.h"
-#include "Base.h"
+#include "SchedulerBase.h"
 #include "Scheduler.h"
 
 namespace Phantom {
 	class SolenoidController:
-		virtual public Base {
+		virtual public SchedulerBase {
 	public:
 		SolenoidController(uint8_t pinTrigger);
 		
@@ -19,7 +18,7 @@ namespace Phantom {
 
 		void update();
 	private:
-		Scheduler sched;
+		Scheduler scheduler;
 		uint8_t pinTrigger; // Output pin
 		uint16_t duration = 100; // in ms
 

@@ -2,13 +2,13 @@
 
 using namespace Phantom;
 
-std::vector<std::pair<Base*, uint32_t>> Scheduler::tasks;
+std::vector<std::pair<SchedulerBase*, uint32_t>> Scheduler::tasks;
 
 Scheduler::Scheduler() {
 
 }
 
-void Scheduler::add(Base* func, uint32_t time) {
+void Scheduler::add(SchedulerBase* func, uint32_t time) {
 	tasks.push_back({func, millis() + time});
 }
 
@@ -16,7 +16,7 @@ void Scheduler::clearAll() {
 	tasks.clear();
 }
 
-void Scheduler::clear(Base* func) {
+void Scheduler::clear(SchedulerBase* func) {
 	// Iterate through entries and clear ones with matching class
 	for (auto i = tasks.begin(); i < tasks.end(); i++) {
 		auto task = (*i);

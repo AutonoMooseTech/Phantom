@@ -2,9 +2,8 @@
 
 using namespace Phantom;
 
-NXTLightSensor::NXTLightSensor(uint8_t pinInput): pinInput(pinInput), Scheduler() {
+NXTLightSensor::NXTLightSensor(uint8_t pinInput): pinInput(pinInput) {
 	pinMode(pinInput, INPUT);
-	add(this, 0);
 }
 
 NXTLightSensor::NXTLightSensor(uint8_t pinInput, uint8_t pinLed): pinInput(pinInput), pinLed(pinLed) {
@@ -13,18 +12,9 @@ NXTLightSensor::NXTLightSensor(uint8_t pinInput, uint8_t pinLed): pinInput(pinIn
 }
 
 float NXTLightSensor::get() {
-	return lightValue;
+	return map(analogRead(pinInput), 1023, 0, 0.0f, 1.0f); // Invert and map input to output
 }
 
 void NXTLightSensor::led(bool state) {
-	ledState = state;
-}
-
-void NXTLightSensor::update() {
-	if (ledState != ledStateLast) digitalWrite(pinLed, ledState); // If state changed, write state
-	ledStateLast = ledState; // Remember last state
-
-	lightValue = map(analogRead(pinInput), 1023, 0, 0.0f, 1.0f); // Invert and map input to output
-
-	add(this, 0);
+	digitalWrite(pinInput, state);
 }
