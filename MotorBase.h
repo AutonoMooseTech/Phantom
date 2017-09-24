@@ -1,6 +1,8 @@
 #ifndef MOTORBASE_H
 #define MOTORBASE_H
 
+#include "Phantom.h"
+
 namespace Phantom {
 	class MotorBase {
 	public:
