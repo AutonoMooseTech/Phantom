@@ -64,7 +64,7 @@ namespace Phantom {
 	template<typename T> inline void setBit(T &data, byte n) { data |= (1u << n); }   // set nth bit
 	template<typename T> inline void clearBit(T &data, byte n) { data &= ~(1u << n); }  // clear nth bit
 	template<typename T> inline void toggleBit(T &data, byte n) { data ^= (1u << n); }   // toggle nth bit
-	template<typename T> inline void changeBit(T &data, byte n, bool x) { data = (-x ^ data) & (1 << n); }
+	template<typename T> inline void changeBit(T &data, byte n, bool x) { data = (-x ^ data) & (1 << n); } // change nth bit
 
 	template<typename T> inline T    getMask(T data,  T m)   { return (data &= m); } // test many bits
 	template<typename T> inline void setMask(T &data, T m)   { data |= m; }          // set many bits
