@@ -2,9 +2,10 @@
 #define MOTORBASE_H
 
 #include "Phantom.h"
+#include "OutputBase.h"
 
 namespace Phantom {
-	class MotorBase {
+	class MotorBase: public OutputBase {
 	public:
 		MotorBase();
 

@@ -2,7 +2,7 @@
 
 using namespace Phantom;
 
-MotorBase::MotorBase() {
+MotorBase::MotorBase(): OutputBase() {
 
 }
 
