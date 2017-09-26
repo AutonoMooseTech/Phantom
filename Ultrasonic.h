@@ -11,7 +11,7 @@ namespace Phantom {
 
 		float get();
 
-		float setRange(float meters)
+		void setRange(float meters);
 	private:
 		uint8_t trigPin;
 		uint8_t echoPin;
