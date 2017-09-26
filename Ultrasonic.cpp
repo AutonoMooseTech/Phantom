@@ -9,8 +9,7 @@ Ultrasonic::Ultrasonic(uint8_t trigPin, uint8_t echoPin): trigPin(trigPin), echo
 
 float Ultrasonic::get() {
 	pulseHighMicro(trigPin, 10);
-	distance = pulseIn(echoPin, HIGH, timeout) / 5800;
-	return distance;
+	return pulseIn(echoPin, HIGH, timeout) / 5800;
 }
 
 void Ultrasonic::setRange(float meters) {
