@@ -16,7 +16,7 @@ namespace Phantom {
 		uint8_t trigPin;
 		uint8_t echoPin;
 
-		timeout = 23200; // uS
+		uint16_t timeout = 23200; // in uS, default is maximum (4 meters)
 	};
 }
 
