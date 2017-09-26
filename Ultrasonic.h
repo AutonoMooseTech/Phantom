@@ -10,9 +10,13 @@ namespace Phantom {
 		Ultrasonic(uint8_t trigPin, uint8_t echoPin);
 
 		float get();
+
+		float setRange(float meters)
 	private:
 		uint8_t trigPin;
 		uint8_t echoPin;
+
+		timeout = 23200; // uS
 	};
 }
 
