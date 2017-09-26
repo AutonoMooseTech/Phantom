@@ -2,7 +2,7 @@
 
 using namespace Phantom;
 
-DigitalInput::DigitalInput(uint8_t pin): pin(pin) {
+DigitalInput::DigitalInput(uint8_t pin): pin(pin), InputBase() {
 	pinMode(pin, INPUT);
 }
 

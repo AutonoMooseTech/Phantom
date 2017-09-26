@@ -8,7 +8,8 @@ namespace Phantom {
 	public:
 		InputBase();
 		
-		virtual float get();		
+		template <typename T>
+		T get();		
 	};
 }
 

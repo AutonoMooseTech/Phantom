@@ -2,9 +2,10 @@
 #define DIGITALINPUT_H
 
 #include "Phantom.h"
+#include "InputBase.h"
 
 namespace Phantom {
-	class DigitalInput {
+	class DigitalInput: public InputBase {
 	public:
 		DigitalInput(uint8_t pin);
 		

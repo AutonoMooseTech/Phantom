@@ -9,7 +9,7 @@ namespace Phantom {
 		OutputBase();
 		
 		template <typename T>
-		virtual void set(T value);
+		void set(T value);
 	};
 }
 
