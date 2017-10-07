@@ -10,12 +10,23 @@ Encoder::Encoder(uint8_t pinA, uint8_t pinB): pinA(pinA), pinB(pinB) {
 	pinMode(pinB, INPUT);
 }
 
+Encoder::Encoder(uint8_t pinA, uint8_t pinB, type_t type): pinA(pinA), pinB(pinB), type(type) {
+	pinMode(pinA, INPUT);
+	pinMode(pinB, INPUT);
+}
+
 int32_t Encoder::get() {
-	return value;
+	return value / type;
 }
 
 int8_t Encoder::getDirection() {
 	return direction;
+}
+
+bool Encoder::getChanged() {
+	bool hasChanged = changed;
+	changed = false;
+	return hasChanged;
 }
 
 void Encoder::reset() {
@@ -26,6 +37,7 @@ void Encoder::reset() {
 void Encoder::update() {
 	uint8_t state = digitalRead(pinA) | (digitalRead(pinB) << 1);
 	if (state != lastState) {
+		changed = true;
 		switch (state | (lastState << 2)) {
 			case 1: case 7: case 8:	case 14:
 				value--;
@@ -37,5 +49,8 @@ void Encoder::update() {
 				break;
 		}
 		lastState = state;
+	}
+	else {
+		changed = false;
 	}
 } 

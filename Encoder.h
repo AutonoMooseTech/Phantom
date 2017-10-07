@@ -6,6 +6,12 @@
 namespace Phantom {
 	class Encoder {
 	public:
+		enum type_t {
+			X1 = 1,
+			X2 = 2,
+			X4 = 4
+		};
+
 		enum direction_t {
 			FORWARD 	= 1,
 			STOPPED 	= 0,
@@ -17,6 +23,8 @@ namespace Phantom {
 
 		int8_t getDirection();
 
+		bool getChanged();
+
 		void reset();
 
 		void update();
@@ -24,11 +32,13 @@ namespace Phantom {
 		uint8_t pinA;
 		uint8_t pinB;
 	private:
+		type_t type = type_t::X4;
+
 		int32_t value;
 		direction_t direction;
+		bool changed = false;
 
 		uint8_t lastState;
-		
 	};
 }
 
