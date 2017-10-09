@@ -17,7 +17,9 @@ namespace Phantom {
 			STOPPED 	= 0,
 			BACKWARDS 	= -1
 		};
+
 		Encoder(uint8_t pinA, uint8_t pinB);
+		Encoder(uint8_t pinA, uint8_t pinB, type_t type);
 
 		int32_t get();
 
