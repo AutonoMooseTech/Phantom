@@ -1,8 +1,6 @@
 #ifndef SCHEDULER_H
 #define SCHEDULER_H
 
-//#include <StandardCplusplus.h>
-
 #include "Phantom.h"
 #include <vector>
 #include "SchedulerBase.h"
